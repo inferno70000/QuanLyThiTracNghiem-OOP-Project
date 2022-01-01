@@ -2799,10 +2799,14 @@ public class index {
         int n = nhap.kiemTraSo(1);
         for (int i = 1; i <= n; i++) {
             System.out.println("Nhap giang vien thu " + i + " : ");
-            giangVien tmp = new giangVien();
-            tmp.nhap();
-            tmp.setmaGV(Integer.toString(GiangVien.idNext()));
-            GiangVien.them(tmp);
+            giangVien gv = new giangVien();
+            gv.nhap();
+            gv.setmaGV(Integer.toString(GiangVien.idNext()));
+            GiangVien.them(gv);
+            String pass = Integer.toString(gv.getNgaySinh().getNgay()) + Integer.toString(gv.getNgaySinh().getThang())
+            + Integer.toString(gv.getNgaySinh().getNam());
+            taiKhoan tk = new taiKhoan(gv.getmaGV(), pass, "gv");
+            TaiKhoan.them(tk);
         }
     }
 
@@ -2817,6 +2821,7 @@ public class index {
                 BoDe.setAt(i, tmp);
             }
         }
+        TaiKhoan.xoa(maGv);
     }
 
     public void suaThongTinGv() {
@@ -2862,10 +2867,14 @@ public class index {
         int n = nhap.kiemTraSo(1);
         for (int i = 1; i <= n; i++) {
             System.out.println("Nhap sinh vien thu " + i + " : ");
-            sinhVien tmp = new sinhVien();
-            tmp.nhap();
-            tmp.setMSSV(Integer.toString(SinhVien.idNext()));
-            SinhVien.them(tmp);
+            sinhVien sv = new sinhVien();
+            sv.nhap();
+            sv.setMSSV(Integer.toString(SinhVien.idNext()));
+            SinhVien.them(sv);
+            String pass = Integer.toString(sv.getNgaySinh().getNgay()) + Integer.toString(sv.getNgaySinh().getThang())
+            + Integer.toString(sv.getNgaySinh().getNam());
+            taiKhoan tk = new taiKhoan(sv.getMSSV(), pass, "sv");
+            TaiKhoan.them(tk);
         }
     }
 
@@ -2887,6 +2896,7 @@ public class index {
             }
         }
         taoBangDiem();
+        TaiKhoan.xoa(maSv);
         updateDiem();
     }
 
