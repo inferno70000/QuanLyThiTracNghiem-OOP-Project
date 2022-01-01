@@ -169,6 +169,15 @@ public class danhSachBaiLam implements iDanhSach, Serializable {
         return -1;
     }
 
+    danhSachBaiLam timKiemTheoSinhVien(String maSv){
+        danhSachBaiLam result=new danhSachBaiLam();
+        for(int i=0;i<soLuong;i++){
+            if(ds[i].getMssv().equals(maSv))
+                result.them(ds[i]);
+        }
+        return result;
+    }
+
     public int timKiem(String maSv,String maDe){
         for(int i=0;i<soLuong();i++){
             if(ds[i].getMaDe().equals(maDe) && ds[i].getMssv().equals(maSv)){

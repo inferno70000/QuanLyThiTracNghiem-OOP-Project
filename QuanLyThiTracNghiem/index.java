@@ -2,6 +2,8 @@ package QuanLyThiTracNghiem;
 
 import java.math.*;
 
+import javax.swing.text.FlowView.FlowStrategy;
+
 public class index {
 
     private String userCurent;
@@ -1083,6 +1085,14 @@ public class index {
             nhap.waiting();
             return;
         }
+        danhSachBaiLam tmp = BaiLam.timKiemTheoSinhVien(maSv);
+        if(tmp.soLuong()==0){
+            System.out.println("Sinh vien khong co bai lam!!");
+            nhap.waiting();
+            return ;
+        }
+        System.out.println("Danh sach bai lam cua sinh vien");
+        tmp.xuat();
         System.out.println("Nhap ma bo de:");
         String maDe=nhap.kiemTraMa(nhap.soLuongKyTuMa);
         if(BoDe.timKiem(maDe)==-1){
