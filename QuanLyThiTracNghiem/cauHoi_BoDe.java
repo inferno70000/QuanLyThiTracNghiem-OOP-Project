@@ -23,7 +23,7 @@ public class cauHoi_BoDe extends abCauHoi {
 
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return maCau+maBoDe;
     }
 

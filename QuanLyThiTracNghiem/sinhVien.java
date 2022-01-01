@@ -29,7 +29,7 @@ public class sinhVien extends conNguoi {
     }
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return MSSV;
     }
 

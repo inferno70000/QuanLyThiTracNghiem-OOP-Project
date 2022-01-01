@@ -1644,11 +1644,11 @@ public class index {
         }
     }
 
-    public void taoHocPhan() {
+    public void taoHocPhan(String maHocPhan) {
         hocPhan tmp = new hocPhan();
         tmp.nhap();
         tmp.setMaKhoa(maKhoa);
-        tmp.setMaHocPhan(Integer.toString(HocPhan.idNext()));
+        tmp.setMaHocPhan(maHocPhan);
         HocPhan.them(tmp);
     }
 
@@ -2957,7 +2957,13 @@ public class index {
         int n = nhap.kiemTraSo(1);
         for (int i = 1; i <= n; i++) {
             System.out.println("Nhap hoc phan thu " + i + ": ");
-            taoHocPhan();
+            String maHocPhan =nhap.kiemTraMa(nhap.soLuongKyTuMa);
+            if(HocPhan.kiemTraKhoaChinh(maHocPhan)){
+                taoHocPhan(maHocPhan);
+            }
+            else{
+                System.out.println("Hoc phan da ton tai!!");
+            }
         }
     }
 

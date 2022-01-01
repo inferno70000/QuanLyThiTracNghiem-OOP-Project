@@ -123,13 +123,16 @@ public class danhSachHocPhan implements iDanhSach, Serializable {
         return false;
     }
     public boolean kiemTraKhoaChinh(hocPhan obj){
-        for(int i=0;i<soLuong;i++){
-            if(obj.getFk().equals(ds[i].getFk()))
+        return kiemTraKhoaChinh(obj.getPk());
+    }
+
+	public boolean kiemTraKhoaChinh(String Pk){
+		for(int i=0;i<soLuong;i++){
+            if(Pk.equals(ds[i].getPk()))
                 return false;
         }
         return true;
     }
-
 
 	@Override
 	public void xuat() {

@@ -60,7 +60,7 @@ public class chiTietDiem implements iClass, Serializable {
 	}
 
 	@Override
-    public String getFk(){
+    public String getPk(){
         return maBangDiem+maBoDe;
     }
 

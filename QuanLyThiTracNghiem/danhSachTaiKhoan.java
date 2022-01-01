@@ -130,7 +130,7 @@ public class danhSachTaiKhoan implements iDanhSach, Serializable {
 
     public boolean kiemTraKhoaChinh(taiKhoan obj) {
         for (int i = 0; i < soLuong; i++) {
-            if (obj.getFk().equals(ds.get(i).getFk()))
+            if (obj.getPk().equals(ds.get(i).getPk()))
                 return false;
         }
         return true;

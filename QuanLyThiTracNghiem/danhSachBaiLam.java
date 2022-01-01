@@ -266,7 +266,7 @@ public class danhSachBaiLam implements iDanhSach, Serializable {
     }
     public boolean kiemTraKhoaChinh(baiLam obj){
         for(int i=0;i<soLuong;i++){
-            if(obj.getFk().equals(ds[i].getFk()))
+            if(obj.getPk().equals(ds[i].getPk()))
             {
                 return false;
             }

@@ -107,7 +107,7 @@ public class danhSachChiTietNhom implements iDanhSach , Serializable{
     }
     public boolean kiemTraKhoaChinh(chiTietNhom obj){
         for(int i=0;i<soLuong;i++){
-            if(obj.getFk().equals(ds[i].getFk()))
+            if(obj.getPk().equals(ds[i].getPk()))
                 return false;
         }
         return true;

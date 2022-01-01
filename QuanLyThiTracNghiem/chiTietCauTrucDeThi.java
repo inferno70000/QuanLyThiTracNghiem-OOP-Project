@@ -63,7 +63,7 @@ public class chiTietCauTrucDeThi implements iClass, Serializable {
     }
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return maDe+maChuong;
     }
 
