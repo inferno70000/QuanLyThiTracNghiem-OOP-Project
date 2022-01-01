@@ -3207,8 +3207,8 @@ public class index {
         // Init();
         // check();
         menuChinh();
-        BaiLam.xuat();
-        xemBaiLam();
+        // BaiLam.xuat();
+        // xemBaiLam();
         ghiFile();
     }
 }
