@@ -1109,7 +1109,7 @@ public class index {
         }
         BaiLam.at(BaiLam.timKiem(maSv, maDe)).xuat();
         CauHoiBaiLam.timKiem(BaiLam.at(BaiLam.timKiem(maSv, maDe)).getMaBailam());
-        BaiLam.at(BaiLam.timKiem(maSv, maDe)).xuat();
+        // BaiLam.at(BaiLam.timKiem(maSv, maDe)).xuat();
         nhap.waiting();
     }
 
@@ -3207,8 +3207,8 @@ public class index {
         // Init();
         // check();
         menuChinh();
-        // BaiLam.xuat();
-        // xemBaiLam();
+        BaiLam.xuat();
+        xemBaiLam();
         ghiFile();
     }
 }
