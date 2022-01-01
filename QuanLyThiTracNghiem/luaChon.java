@@ -63,7 +63,7 @@ public class luaChon implements iClass, Serializable {
     }
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return maCau+maLuaChon;
     }
     @Override

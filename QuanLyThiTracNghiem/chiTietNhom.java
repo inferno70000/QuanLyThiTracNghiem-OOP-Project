@@ -22,7 +22,7 @@ public class chiTietNhom implements iClass , Serializable{
 	}
 
 	@Override
-    public String getFk(){
+    public String getPk(){
         return maNhom+maSv;
     }
 	@Override

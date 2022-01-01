@@ -21,7 +21,7 @@ public class cauHoi_NganHang extends abCauHoi {
     }
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return maCau;
     }
 

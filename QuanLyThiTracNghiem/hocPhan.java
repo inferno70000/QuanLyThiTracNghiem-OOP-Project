@@ -19,7 +19,7 @@ public class hocPhan implements iClass, Serializable{
 		this.soTinChi = soTinChi;
 	}
 	@Override
-    public String getFk(){
+    public String getPk(){
         return maHocPhan;
     }
 

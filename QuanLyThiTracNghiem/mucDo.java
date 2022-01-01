@@ -39,7 +39,7 @@ public class mucDo  implements iClass, Serializable{
     }
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return maMucDo;
     }
 

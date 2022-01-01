@@ -34,7 +34,7 @@ public class giangVien extends conNguoi {
     }
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return maGV;
     }
     @Override

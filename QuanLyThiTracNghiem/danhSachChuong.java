@@ -125,7 +125,7 @@ public class danhSachChuong implements iDanhSach, Serializable {
     }
     public boolean kiemTraKhoaChinh(chuong obj){
         for(int i=0;i<soLuong;i++){
-            if(obj.getFk().equals(ds.get(i).getFk()))
+            if(obj.getPk().equals(ds.get(i).getPk()))
                 return false;
         }
         return true;

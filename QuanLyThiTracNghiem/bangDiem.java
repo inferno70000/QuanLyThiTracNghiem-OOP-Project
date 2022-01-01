@@ -54,7 +54,7 @@ public class bangDiem implements iClass, Serializable{
 	}
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return maBangDiem;
     }
 

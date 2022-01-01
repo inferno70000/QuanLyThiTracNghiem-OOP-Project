@@ -51,7 +51,7 @@ public class cauHoi_BaiLam extends abCauHoi {
     }
 
     @Override
-    public String getFk(){
+    public String getPk(){
         return maCau+maBaiLam;
     }
 

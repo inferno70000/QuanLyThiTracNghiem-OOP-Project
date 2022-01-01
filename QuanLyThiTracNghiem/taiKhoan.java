@@ -42,7 +42,7 @@ public class taiKhoan implements iClass, Serializable {
     }
 
     @Override
-    public String getFk() {
+    public String getPk() {
         return id;
     }
 
