@@ -2,7 +2,6 @@ package QuanLyThiTracNghiem;
 
 import java.math.*;
 
-
 public class index {
 
     private String userCurent;
@@ -2929,7 +2928,7 @@ public class index {
             return;
         }
         HocPhan.at(HocPhan.timKiem(maHocPhan)).setMaHocPhan(maHocPhanMoi);
-        System.out.printf("Ban co muon thay doi tat ca %s thanh %s khong ??", maHocPhan, maHocPhanMoi);
+        System.out.printf("Ban co muon thay doi tat ca %s thanh %s khong ??\n", maHocPhan, maHocPhanMoi);
         System.out.println("--------------");
         System.out.println("|  1. Co     |");
         System.out.println("|  2. Khong  |");
