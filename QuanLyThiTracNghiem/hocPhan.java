@@ -95,8 +95,8 @@ public class hocPhan implements iClass, Serializable{
 			switch(chon)
 			{
 			case 1:
-				System.out.println("Ma hoc phan moi:");
-				maHocPhan=nhap.kiemTraMa(nhap.soLuongKyTuMa);
+				System.out.println("Ma khoa moi:");
+				maKhoa=nhap.kiemTraMa(nhap.soLuongKyTuMa);
 				break;
 			case 2:
 				System.out.println("So tin chi moi:");
