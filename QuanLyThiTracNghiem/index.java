@@ -3107,7 +3107,7 @@ public class index {
             System.out.println("| 2.Sua Nhom Hoc Phan         |");
             System.out.println("| 3.Xoa Nhom Hoc Phan         |");
             System.out.println("| 4.Xem Nhom Hoc Phan         |");
-            System.out.println("| 5.Thoát                     |");
+            System.out.println("| 5.Thoat                     |");
             System.out.println("-------------------------------");
             int luaChon = nhap.kiemTraSo(1, 5);
             switch (luaChon) {
@@ -3210,6 +3210,7 @@ public class index {
             return;
         }
         ChiTietNhom.them(new chiTietNhom(maNhom, maSv));
+        updateNhomHocPhan();
     }
 
     public void xoaSvKhoiNhom() {
@@ -3226,6 +3227,7 @@ public class index {
             return;
         }
         ChiTietNhom.xoa(maNhom, maSv);
+        updateNhomHocPhan();
     }
 
     public void xoaNhomHocPhan() {
