@@ -3020,7 +3020,7 @@ public class index {
     public void suaMaHocPhan(String maHocPhan){
         System.out.println("Nhap ma hoc phan moi");
         String maHocPhanMoi=nhap.kiemTraMa(nhap.soLuongKyTuMa);
-        if(!maHocPhanMoi.equals(maHocPhan) || !HocPhan.kiemTraKhoaChinh(maHocPhanMoi)){
+        if(!HocPhan.kiemTraKhoaChinh(maHocPhanMoi)){
             System.out.println("Ma hoc phan da ton tai!!");
             return;
         }
