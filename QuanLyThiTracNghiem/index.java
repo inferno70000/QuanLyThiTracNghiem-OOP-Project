@@ -2,7 +2,6 @@ package QuanLyThiTracNghiem;
 
 import java.math.*;
 
-import javax.swing.text.FlowView.FlowStrategy;
 
 public class index {
 
@@ -254,9 +253,6 @@ public class index {
         NhomHocPhan = a;
     }
 
-    /**
-     * chua test
-     */
     public void BaiLam() {
     danhSachBaiLam a = new danhSachBaiLam();
     a.them(new baiLam("78324", "86821", 1, "41022", "10033", 5));
@@ -313,34 +309,6 @@ public class index {
             BangDiem.them(tmp);
         }
     }
-
-    /**
-     * chua test
-     */
-    // public void BangDiem() {
-    // danhSachBangDiem a = new danhSachBangDiem();
-    // a.them(new bangDiem("20021", "10033", "2021", 1));
-    // a.them(new bangDiem("20022", "10060", "2021", 1));
-    // a.them(new bangDiem("20023", "10007", "2021", 1));
-    // a.them(new bangDiem("20024", "10085", "2021", 1));
-    // a.them(new bangDiem("20025", "10107", "2021", 1));
-    // BangDiem = a;
-    // }
-
-    // public void ChiTietDiem() {
-    // danhSachChiTietDiem a = new danhSachChiTietDiem();
-    // a.them(new chiTietDiem("20021", "86821", "41022", 9f));
-    // a.them(new chiTietDiem("20021", "86822", "41044", 10f));
-    // a.them(new chiTietDiem("20022", "86822", "41044", 9f));
-    // a.them(new chiTietDiem("20022", "86821", "41022", 9.5f));
-    // a.them(new chiTietDiem("20023", "86822", "41044", 8.5f));
-    // a.them(new chiTietDiem("20023", "86821", "41022", 8f));
-    // a.them(new chiTietDiem("20024", "86822", "41044", 7f));
-    // a.them(new chiTietDiem("20024", "86821", "41022", 8f));
-    // a.them(new chiTietDiem("20025", "86822", "41044", 8.5f));
-    // a.them(new chiTietDiem("20025", "86821", "41022", 7.5f));
-    // ChiTietDiem = a;
-    // }
 
     public void taoLaiTaiKhoan() {
         TaiKhoan = new danhSachTaiKhoan();
@@ -409,8 +377,7 @@ public class index {
         NhomHocPhan();
         BaiLam();
         CauHoiBaiLam();
-        // BangDiem();
-        // ChiTietDiem();
+
         BoDe();
         CauHoiBoDe();
         taoBangDiem();
@@ -471,7 +438,6 @@ public class index {
             System.out.println("-----------------------------------");
             System.out.println("|   1.Xem thong tin               |");
             System.out.println("|   2.Dang nhap                   |");
-            // System.out.println("| 3.Thay doi hoc ki va nam hoc |");
             System.out.println("|   3.Thoat                       |");
             System.out.println("-----------------------------------");
             System.out.println("Nhap lua chon cua ban.");
@@ -674,7 +640,6 @@ public class index {
         danhSachSinhVien tmp = new danhSachSinhVien();
         for (int i = 0; i < ChiTietNhom.getSoLuong(); i++) {
             if (ChiTietNhom.at(i).getMaNhom().equals(maNhom)) {
-                // SinhVien.at(SinhVien.timKiem(ChiTietNhom.at(i).getMaSv())).xuatDanhSach();
                 tmp.them(SinhVien.at(SinhVien.timKiem(ChiTietNhom.at(i).getMaSv())));
             }
         }
@@ -814,12 +779,10 @@ public class index {
         danhSachCauHoiBoDe De = CauHoiBoDe.timKiem(maDe);
         for (int j = 0; j < De.soLuong(); j++) {
             System.out.printf("Cau %d :\n", j + 1);
-            // System.out.println("=========================================================================================");
             System.out.println();
             De.at(j).xuat();
             LuaChon.timKiemTheoCauHoi(De.at(j).getMaCau()).xuatLuaChon();
             System.out.println();
-            // System.out.println("=========================================================================================");
         }
         BaiLam.at(BaiLam.timKiem(maSv, maDe)).xuat();
         CauHoiBaiLam.timKiem(BaiLam.at(BaiLam.timKiem(maSv, maDe)).getMaBailam());
@@ -850,7 +813,6 @@ public class index {
     }
 
     public void lamBaiKiemTra() {
-        // float diem=0;
         System.out.println("Nhap ma de:");
         String maDe = nhap.kiemTraChuoi(nhap.soLuongKyTuMa);
         int index = BoDe.timKiem(maDe);
@@ -871,30 +833,19 @@ public class index {
         String maHocPhan = BoDe.at(index).maHocPhan;
         String maBaiLam = Integer.toString(BaiLam.idNext());
         BoDe.at(index).xuat();
-        // double diemMoiCau= 10/(BoDe.at(index).getSoCau()*1.0);
         danhSachCauHoiBoDe De = CauHoiBoDe.timKiem(maDe);
         for (int j = 0; j < De.soLuong(); j++) {
             System.out.printf("Cau %d :\n", j + 1);
-            // System.out.println("=========================================================================================");
             System.out.println();
             De.at(j).xuat();
             LuaChon.timKiemTheoCauHoi(De.at(j).getMaCau()).xuatLuaChon();
             System.out.println();
-            // System.out.println("=========================================================================================");
         }
         for (int i = 0; i < De.soLuong(); i++) {
             String maCau = De.at(i).getMaCau();
             String noiDung = De.at(i).getNoiDung();
             System.out.printf("Nhap cau tra loi cho cau %s :\n", maCau);
             char luaChon = nhap.kiemTraLuaChon();
-            // danhSachLuaChon dapAn=LuaChon.timKiem(maCau);
-            // for(int j=0;j<dapAn.soLuong();j++){
-            // if(dapAn.at(j).getMaLuaChon()==luaChon){
-            // if(dapAn.at(j).getDapAn()){
-            // diem+=diemMoiCau;
-            // }
-            // }
-            // }
             CauHoiBaiLam.them(new cauHoi_BaiLam(maCau, noiDung, luaChon, maBaiLam));
         }
         boolean Found = true;
@@ -913,18 +864,10 @@ public class index {
                     if (i == -1) {
                         System.out.println("Ma cau khong ton tai trong de!!");
                     } else {
-                        // diem-=diemMoiCau;
+
                         System.out.printf("Nhap cau tra loi cho cau %s :\n", maCau);
                         char luaChon = nhap.kiemTraLuaChon();
-                        // danhSachLuaChon dapAn=LuaChon.timKiem(maCau);
-                        // for(int j=0;j<dapAn.soLuong();j++){
-                        // if(dapAn.at(j).getMaLuaChon()==luaChon){
-                        // if(dapAn.at(j).getDapAn()){
-                        // diem+=diemMoiCau;
-                        // // System.out.println("Dung");
-                        // }
-                        // }
-                        // }
+
                         CauHoiBaiLam.at(CauHoiBaiLam.timKiem(maBaiLam, maCau)).setdapAnChon(luaChon);
                     }
                     nhap.waiting();
@@ -940,7 +883,6 @@ public class index {
         }
         final long endTime = System.currentTimeMillis();
         long time = endTime - startTime;
-        // System.out.println("Total execution time: " + (endTime - startTime));
         BaiLam.them(new baiLam(maBaiLam, maDe, hocKi, maHocPhan, userCurent, time));
         float diem = chamBai(maBaiLam);
         System.out.println("Diem: " + diem);
@@ -965,7 +907,6 @@ public class index {
                     if (dapAn.at(j).getMaLuaChon() == CauHoiBaiLam.at(i).getdapAnChon()) {
                         if (dapAn.at(j).getDapAn()) {
                             diem += diemMoiCau;
-                            // System.out.println("Dung");
                         }
                     }
                 }
@@ -1027,7 +968,6 @@ public class index {
         }
     }
 
-    // test
     public void menuGv() {
         while (true) {
             GiangVien.at(GiangVien.timKiem(userCurent)).xuat();
@@ -1110,16 +1050,13 @@ public class index {
         danhSachCauHoiBoDe De = CauHoiBoDe.timKiem(maDe);
         for (int j = 0; j < De.soLuong(); j++) {
             System.out.printf("Cau %d :\n", j + 1);
-            // System.out.println("=========================================================================================");
             System.out.println();
             De.at(j).xuat();
             LuaChon.timKiemTheoCauHoi(De.at(j).getMaCau()).xuat();
             System.out.println();
-            // System.out.println("=========================================================================================");
         }
         BaiLam.at(BaiLam.timKiem(maSv, maDe)).xuat();
         CauHoiBaiLam.timKiem(BaiLam.at(BaiLam.timKiem(maSv, maDe)).getMaBailam());
-        // BaiLam.at(BaiLam.timKiem(maSv, maDe)).xuat();
         nhap.waiting();
     }
 
@@ -1354,7 +1291,6 @@ public class index {
             System.out.println("|   1.Xem tat ca             |");
             System.out.println("|   2.Xem theo hoc phan      |");
             System.out.println("|   3.Xem chi tiet de thi    |");
-            // System.out.println("| 4.Sua de thi |");
             System.out.println("|   4.Thoat                  |");
             System.out.println("------------------------------");
             int luachon = nhap.kiemTraSo(1, 4);
@@ -1372,8 +1308,6 @@ public class index {
                     nhap.waiting();
                     break;
                 case 4:
-                    // suaDeThi();
-                    // case 5:
                     return;
                 default:
                     break;
@@ -1570,9 +1504,6 @@ public class index {
         }
     }
 
-    /**
-     * Chua test
-     */
     public void taoDeTuTao() {
         deTuTao de = new deTuTao();
         de.setMaGvTaoDe(userCurent);
@@ -1628,7 +1559,6 @@ public class index {
                     nhap.waiting();
                     break;
                 case 2:
-                    // xemCauHoiHocPhan(de.getmaHocPhan());
                     xemCauHoi();
                     break;
                 case 3:
@@ -1663,33 +1593,7 @@ public class index {
     }
 
     public void taoDeTheoCauTruc() {
-        // //
-        // System.out.println("Nhap ma hoc phan: ");
-        // String maHocPhan=nhap.kiemTraMa(nhap.soLuongKyTuMa);
-        // while (HocPhan.timKiem(maHocPhan) == -1) {
-        // System.out.println("Hoc phan khong ton tai, khong the tao de");
-        // System.out.println("--------------------------");
-        // System.out.println("| 1.Nhap lai hoc phan |");
-        // System.out.println("| 2.Xem hoc phan |");
-        // System.out.println("| 3.Thoat |");
-        // System.out.println("--------------------------");
-        // System.out.println("Nhap lua chon cua ban: ");
-        // int luachon = nhap.kiemTraSo(1, 3);
-        // switch (luachon) {
-        // case 1:
-        // System.out.println("Nhap ma hoc phan: ");
-        // maHocPhan = nhap.kiemTraMa(nhap.soLuongKyTuMa);
-        // break;
-        // case 2:
-        // xemHocPhan();
-        // break;
-        // case 3:
-        // return;
-        // default:
-        // break;
-        // }
-        // }
-        // xemCauTrucDeTheoHocPhan(maHocPhan);
+
         boolean flag = true;
         while (flag) {
             System.out.println("----------------------------");
@@ -3134,27 +3038,6 @@ public class index {
         }
     }
 
-    // public void themNhomHocPhan() {
-    //     System.out.println("Nhap so hoc phan ban muon them: ");
-    //     int n = nhap.kiemTraSo(1);
-    //     for (int i = 1; i <= n; i++) {
-    //         System.out.printf("Nhap nhom hoc phan thu %d :", i);
-    //         taoNhomHocPhan();
-    //     }
-    // }
-
-    // public void taoNhomHocPhan() {
-    //     System.out.println("Nhap ma hoc phan: ");
-    //     String maHocPhan = nhap.kiemTraMa(nhap.soLuongKyTuMa);
-    //     if (HocPhan.timKiem(maHocPhan) == -1) {
-    //         System.out.println("Hoc phan khong ton tai!!");
-    //         System.out.println("Khong the tao nhom hoc phan!");
-    //         return;
-    //     }
-    //     NhomHocPhan.them(new nhomHocPhan(Integer.toString(NhomHocPhan.idNext()), maHocPhan, 0));
-    // }
-
-    
     public void themNhomHocPhan() {
         System.out.println("Nhap ma hoc phan: ");
         String maHocPhan = nhap.kiemTraMa(nhap.soLuongKyTuMa);
@@ -3284,10 +3167,7 @@ public class index {
     public void start() {
         docFile();
         // Init();
-        // check();
         menuChinh();
-        // BaiLam.xuat();
-        // xemBaiLam();
         ghiFile();
     }
 }

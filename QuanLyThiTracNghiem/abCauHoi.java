@@ -5,7 +5,6 @@ import java.io.*;
 public abstract class abCauHoi implements iClass , Serializable{
    protected String maCau;
    protected String noiDung;
-    // protected Scanner sc = new Scanner(System.in);
 
     public abCauHoi() {
 
