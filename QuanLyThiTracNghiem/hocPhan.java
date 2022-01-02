@@ -83,12 +83,15 @@ public class hocPhan implements iClass, Serializable{
 	public void sua()
 	{
 		do {
+			System.out.println("Chon thong tin can sua");
 			System.out.println("----------------------");
             System.out.println("|   1. Ma khoa        |");
             System.out.println("|   2. So tin chi     |");
-            System.out.println("----------------------");
+			System.out.println("|   3. Ten hoc phan   |");
+			System.out.println("|   4. Thoat          |");
+			System.out.println("----------------------");
             System.out.println("Nhap thong tin can sua:");
-			int chon=nhap.kiemTraSo(1, 2);
+			int chon=nhap.kiemTraSo(1, 4);
 			switch(chon)
 			{
 			case 1:
@@ -99,12 +102,13 @@ public class hocPhan implements iClass, Serializable{
 				System.out.println("So tin chi moi:");
 				soTinChi=nhap.kiemTraSo(2,4);
 				break;
-			default:
-				System.out.println("Ban nhap sai!!!");
+			case 3:
+				System.out.println("Nhap ten hoc phan");
+				tenHocPhan=nhap.kiemTraChuoi(nhap.soLuongKyTuChuoi);
 				break;
+			default:
+				return;
 			}
-			System.out.println("-----------------------------------------------------------------");
-            System.out.println("Nhap t de thoat, bat ki phim nao de tiep tuc sua hoc phan.");
-        } while (!nhap.kiemTraChuoi().toLowerCase().equals("t"));
+        } while (true);
 	}	
 }

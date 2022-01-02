@@ -2995,7 +2995,74 @@ public class index {
             System.out.println("Hoc phan khong ton tai");
             return;
         }
-        HocPhan.at(index).sua();
+        while(true){
+            System.out.println("      Ban muon sua:");
+            System.out.println("---------------------------");
+            System.out.println("|  1. Ma hoc phan         |");
+            System.out.println("|  2. Cac thong tin khac  |");
+            System.out.println("|  3. Thoat               |");
+            System.out.println("---------------------------");
+            System.out.println("Nhap lua chon cua ban");
+            int luachon=nhap.kiemTraSo(1, 3);
+            switch (luachon) {
+                case 1:
+                    suaMaHocPhan(maHocPhan);
+                    break;
+                case 2:
+                    HocPhan.at(index).sua();
+                    break;
+                default:
+                    return;
+            }
+        }
+    }
+
+    public void suaMaHocPhan(String maHocPhan){
+        System.out.println("Nhap ma hoc phan moi");
+        String maHocPhanMoi=nhap.kiemTraMa(nhap.soLuongKyTuMa);
+        if(!maHocPhanMoi.equals(maHocPhan) || !HocPhan.kiemTraKhoaChinh(maHocPhanMoi)){
+            System.out.println("Ma hoc phan da ton tai!!");
+            return;
+        }
+        HocPhan.at(HocPhan.timKiem(maHocPhan)).setMaHocPhan(maHocPhanMoi);
+        System.out.printf("Ban co muon thay doi tat ca %s thanh %s khong ??", maHocPhan, maHocPhanMoi);
+        System.out.println("--------------");
+        System.out.println("|  1. Co     |");
+        System.out.println("|  2. Khong  |");
+        System.out.println("--------------");
+        System.out.println("Nhap lua chon cua ban.");
+        int luaChon=nhap.kiemTraSo(1, 2);
+        if(luaChon==1){
+            for(int i=0;i<BaiLam.soLuong();i++){
+                if(BaiLam.at(i).getHocPhan().equals(maHocPhan)){
+                    BaiLam.at(i).setHocPhan(maHocPhanMoi);
+                }
+            }
+
+            for(int i=0;i<BoDe.soLuong();i++){
+                if(BoDe.at(i).getmaHocPhan().equals(maHocPhan)){
+                    BoDe.at(i).setMaHocPhan(maHocPhanMoi);
+                }
+            }
+
+            for(int i=0;i<CauTrucDeThi.soLuong();i++){
+                if(CauTrucDeThi.at(i).getMaHocPhan().equals(maHocPhan)){
+                    CauTrucDeThi.at(i).setMaHocPhan(maHocPhanMoi);
+                }
+            }
+
+            for(int i=0;i<Chuong.soLuong();i++){
+                if(Chuong.at(i).getMaHocPhan().equals(maHocPhan)){
+                    Chuong.at(i).setMaHocPhan(maHocPhanMoi);
+                }
+            }
+
+            for(int i=0;i<NhomHocPhan.soLuong();i++){
+                if(NhomHocPhan.at(i).getMaHocPhan().equals(maHocPhan)){
+                    NhomHocPhan.at(i).setMaHocPhan(maHocPhanMoi);
+                }
+            }
+        }
     }
 
     public void xoaHocPhan() {
