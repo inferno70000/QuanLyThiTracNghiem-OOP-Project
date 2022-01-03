@@ -357,6 +357,7 @@ public class index {
 
     public void updateDiem() {
         taoBangDiem();
+        ChiTietDiem =new danhSachChiTietDiem();
         for (int i = 0; i < BaiLam.soLuong(); i++) {
             chamBai(BaiLam.at(i).getMaBailam());
         }
@@ -3167,6 +3168,7 @@ public class index {
         docFile();
         // Init();
         menuChinh();
+        // ChiTietDiem.xuat();
         ghiFile();
     }
 }
